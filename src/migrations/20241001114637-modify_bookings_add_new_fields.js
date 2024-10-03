@@ -36,7 +36,7 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.removeColumn('Booking', 'noOfSeats');
+    await queryInterface.removeColumn('Booking', 'noOfSeats'); //If we revert the changes i.e. db:migrate:undo, then only these two columns will be removed
     await queryInterface.removeColumn('Booking', 'totalCost');
   }
 };
