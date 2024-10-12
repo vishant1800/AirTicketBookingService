@@ -103,7 +103,7 @@ class BookingService {
 
     async reminderNotification(channel, finalBooking) {
         const flightDate = finalBooking.bookingDate;
-        const reminderDate = new Date(flightDate.getTime() - 1 * 60 * 60 * 1000); //date and time 48 hours prior to boarding
+        const reminderDate = new Date(flightDate.getTime() - 48 * 60 * 60 * 1000); //date and time 48 hours prior to boarding
 
         const currentDate = new Date();
         const mailDelay = reminderDate.getTime() - currentDate.getTime();  //delay time in milliseconds
