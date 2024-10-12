@@ -27,6 +27,16 @@ module.exports = {
         defaultValue: 0
       }
     );
+    await queryInterface.addColumn(
+      'Bookings',
+      'bookingDate',
+      {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: new Date()
+      }
+
+    )
   },
 
   async down (queryInterface, Sequelize) {
