@@ -71,6 +71,8 @@ class BookingService {
     }
 
     async confirmationNotification(channel, finalBooking) {
+        const bookingDate = new Date(finalBooking.bookingDate);
+        const formattedBookingDate = bookingDate.toUTCString(); //converting date to string, using UTC time zone
 
         const htmlContent = `<h1>Booking Confirmation</h1>
                     <p>Dear Valued Customer,</p>
@@ -82,7 +84,7 @@ class BookingService {
                     <p><span class="highlight">Status:</span> ${finalBooking.status}</p>
                     <p><span class="highlight">Number of Seats:</span> ${finalBooking.noOfSeats}</p>
                     <p><span class="highlight">Total Cost:</span> ₹${finalBooking.totalCost}</p>
-                    <p><span class="highlight">Booking Date:</span> ${new Date(finalBooking.bookingDate).toLocaleString()}</p>
+                    <p><span class="highlight">Booking Date:</span> ${formattedBookingDate}</p>
 
                     <p>We hope you have a pleasant journey!</p>
                     <p>Best regards,</p>

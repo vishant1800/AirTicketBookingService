@@ -1,10 +1,10 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
 
-const { PORT } = require('./config/serverConfig')
-const ApiRoutes = require('./routes/index')
+const { PORT } = require('./config/serverConfig');
+const ApiRoutes = require('./routes/index');
 
-const db = require('./models/index')
+const db = require('./models/index');
 
 const app = express();
 

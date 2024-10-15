@@ -10,6 +10,7 @@ const bookingController = new BookingController();
 
 const router = express.Router();
 
+
 router.post('/booking',
     BookingMiddleware.validateCreateBooking,
     bookingController.create);
